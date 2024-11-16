@@ -23,7 +23,7 @@ use Symfony\Component\HttpFoundation\Response;
 
 // ---  || Now to Group Middle ware Just simply copy namespace from both the MDW and Paste to Bootstrap-->app.php
 
-// ---      And apply the function to GroupToMiddleware
+// ---      And apply the function to $middleware->appendToGroup('GroupMDW',[agecheck::class,Countrycheck::class]);    -->Working!
 
 class Agecheck
 {

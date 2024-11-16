@@ -8,6 +8,8 @@ use App\Http\Controllers\FormCtllr;
 use App\Http\Controllers\Route_group;
 
 use App\Http\Controllers\MDW; // Middle Ware Controller called here
+use App\Http\Middleware\Agecheck;
+use App\Http\Middleware\Countrycheck;
 use GuzzleHttp\Middleware;
 
 Route::get('/', function () {
@@ -111,3 +113,10 @@ Route::controller(Route_group::class)->group(
             Route::get('MDWV4',[MDW::class,'mdh']);  // All Working Fine !
         }
     );
+
+// ---- To apply Single or more Middleware to one or more Routes ---
+//                                            || Define the use Namespace above for Both or all the Middlewares ||
+        Route::get('MDWV',[MDW::class,'mdh'])->middleware('GroupMDW');
+        Route::get('MDWV2',[MDW::class,'mdh2'])->middleware([Agecheck::class,Countrycheck::class]); //Working Fine!
+        Route::get('MDWV2',[MDW::class,'mdh2'])->Middleware([Countrycheck::class]); //Working Fine!
+        Route::get('MDWV2',[MDW::class,'mdh2'])->Middleware(Countrycheck::class); //Working Fine!
