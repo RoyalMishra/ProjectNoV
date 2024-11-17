@@ -135,3 +135,10 @@ use App\Http\Controllers\DbController;
         // Now Define the Route for the above
 
     Route::get('DB',[DbController::class,'users']);
+
+
+    // -------- Eloquent Models In Laravel
+
+use App\Http\Controllers\Model_Students;
+
+Route::get('Students',[Model_Students::class,'stu']);
