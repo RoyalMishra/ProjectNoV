@@ -12,6 +12,7 @@ use App\Http\Middleware\Agecheck;
 use App\Http\Middleware\Countrycheck;
 use GuzzleHttp\Middleware;
 
+
 Route::get('/', function () {
     return view('welcome');
 });
@@ -120,3 +121,17 @@ Route::controller(Route_group::class)->group(
         Route::get('MDWV2',[MDW::class,'mdh2'])->middleware([Agecheck::class,Countrycheck::class]); //Working Fine!
         Route::get('MDWV2',[MDW::class,'mdh2'])->Middleware([Countrycheck::class]); //Working Fine!
         Route::get('MDWV2',[MDW::class,'mdh2'])->Middleware(Countrycheck::class); //Working Fine!
+
+        // Middleware Completed ****** -----(o o)---
+
+
+// -----------  Database Connectivity -------((o o))-------
+
+// Simply       Make Controller and View For Db and Import namespace here
+
+use App\Http\Controllers\DbController;
+
+        
+        // Now Define the Route for the above
+
+    Route::get('DB',[DbController::class,'users']);
