@@ -1,8 +1,8 @@
 <x-layout>
     <div>
-        <h1>
+        <h3>
             Hi! This Will Display the List of Students From the Students table of the Database
-        </h1>
+        </h3>
         <h2>
             <table border="1">
                 <tr>

@@ -142,3 +142,27 @@ use App\Http\Controllers\DbController;
 use App\Http\Controllers\Model_Students;
 
 Route::get('Students',[Model_Students::class,'stu']);
+
+// ----- API Calling from the website here.
+
+use App\Http\Controllers\Https_APIs;
+
+Route::get('API',[Https_APIs::class,'API']);
+// Working Successfully.
+
+// ------------- DB Query Builder ------------
+
+use App\Http\Controllers\DBQUery;
+
+Route::get('DBQ',[DBQUery::class,'qry']);
+
+// ----------- All Working Fine -------------
+
+// -----------  Eloquent Query builder -------((o o))-------
+
+// Simply   Make ||Controller||  ||Model|| and ||View|| For Db and Import namespace here
+
+
+use App\Http\Controllers\EloQry;
+
+Route::get('Elo',[EloQry::class,'qry']);
