@@ -12,7 +12,7 @@ class EloQry extends Controller
     function qry()
     {
         // $response=Elo::insert(
-        //     [ 'Name'=>'Rama5', 'Email'=>'Rama5@ram.com','Password'=>'Rama5123'
+        //     [ 'Name'=>'Rama', 'Email'=>'Rama@ram.com','Password'=>'Rama5123'
         // ]);
         
         // if($response)
@@ -25,18 +25,18 @@ class EloQry extends Controller
         // }
 
         //-------- Delete ------------
-        $response=Elo::where('Name','Ram')->update(['Name'=>'Rama']);
+        // $response=Elo::where('Name','Ram')->update(['Name'=>'Rama']);
             
-            if($response)
-            {
-                echo " Name updated";
-            }
-            else
-            {
-                echo " Name not updated";
-            }
+        //     if($response)
+        //     {
+        //         echo " Name updated";
+        //     }
+        //     else
+        //     {
+        //         echo " Name not updated";
+        //     }
 
-        return $data=Elo::all();
-        // return view('Eloquent.qry');
+        $data=Elo::all();
+        return view('Eloquent.qry',['data'=>$data]);
     }
 }
